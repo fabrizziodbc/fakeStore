@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductCard from '../ProductCard';
 
+import './style.scss';
+
 const Gallery = () => {
   const productList = [
     {
@@ -51,14 +53,14 @@ const Gallery = () => {
   ];
   const title = 'Nombre de la galería';
   return (
-    <>
-      <h1 className="galley__title">{title}</h1>
-      <div className="galley__grid">
+    <div className="gallery">
+      <h1 className="gallery__title">{title}</h1>
+      <div className="gallery__grid">
         {productList.map((e) => (
           <ProductCard key={e.id} title={e.title} img={e.image} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
