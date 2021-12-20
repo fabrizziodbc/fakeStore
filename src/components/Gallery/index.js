@@ -1,56 +1,16 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../store/slices/products';
 import ProductCard from '../ProductCard';
 
 import './style.scss';
 
 const Gallery = () => {
-  const productList = [
-    {
-      id: 1,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 2,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 3,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 4,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 5,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 6,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 7,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 8,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-    {
-      id: 9,
-      title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-      image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-    },
-  ];
+  const { productList } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
   const title = 'Nombre de la galería';
   return (
     <div className="gallery">
