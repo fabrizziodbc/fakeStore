@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const timerSlice = createSlice({
   name: 'timer',
-  initialState: { dateNow: Date.now(), timeLimit: [] },
+  initialState: { dateNow: Date.now(), loading: true, timeLimit: [] },
   reducers: {
     setTimeLimit: (state, action) => {
       state.timeLimit = [...state.timeLimit, { ...action.payload }];
+      state.loading = false;
     },
     updateTime: (state) => {
       state.dateNow = Date.now();
