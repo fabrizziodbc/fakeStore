@@ -1,30 +1,28 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Timer from '../Timer';
-
 import './styles.scss';
 
 const ProductCard = ({ title, img, id, dateNow }) => {
-  const { timeLimit } = useSelector((state) => state.timer);
+  const { timeLimit, loading } = useSelector((state) => state.timer);
   return (
     <div className="productCard">
       <img className="productCard__img" src={img} alt={title} />
       <p className="productCard__title">{title} </p>
       <div className="productCard__footer">
         <Timer id={id} className="productCard__counter" />
-        {timeLimit.length &&
-        timeLimit.find((e) => e.id === id).limit - dateNow >= 0 ? (
-          <button
-            type="button"
-            className="productCard__button"
-            onClick={() => console.log('working')}
+        {!loading && (
+          <Link
+            to={
+              timeLimit.find((e) => e.id === id).limit - dateNow >= 0 &&
+              `/${id}`
+            }
           >
-            Go to detail
-          </button>
-        ) : (
-          <button type="button" className="productCard__button">
-            Go to detail
-          </button>
+            <button type="button" className="productCard__button">
+              Go to detail
+            </button>
+          </Link>
         )}
       </div>
     </div>
