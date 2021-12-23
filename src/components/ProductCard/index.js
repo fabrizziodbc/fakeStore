@@ -16,7 +16,7 @@ const ProductCard = ({ title, img, id, dateNow }) => {
           <Link
             to={
               timeLimit.find((e) => e.id === id).limit - dateNow >= 0 &&
-              `/${id}`
+              `/detalle/${id}`
             }
           >
             <button type="button" className="productCard__button">

@@ -5,6 +5,7 @@ import Home from './views/Home';
 import './styles.scss';
 import Detail from './views/Detail';
 import Layaout from './components/Layout';
+import About from './views/About';
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
       <Layaout />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<Detail />} />
+        <Route path="/detalle/:id" element={<Detail />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Provider>
   );
