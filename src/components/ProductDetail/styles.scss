@@ -12,9 +12,14 @@
   }
   &__rating {
     margin: 16px 0;
-    width: 120px;
     display: flex;
     justify-content: space-between;
+  }
+  &__rate{
+    color: gold;
+  }
+  &__count{
+    margin-left: 8px;
   }
   &__img {
     justify-self: center;

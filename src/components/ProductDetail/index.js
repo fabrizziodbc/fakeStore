@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import getStars from '../../utils/getStars';
 import useFetchProductById from '../../utils/hooks/useFetchProductById';
 import DetailSkeleton from '../DetailSkeleton';
 import './styles.scss';
@@ -16,7 +17,7 @@ const ProductDetail = () => {
           <p className="product__title">{title}</p>
           <p className="product__category">tags: {category}</p>
           <div className="product__rating">
-            <p className="product__rate">{rating.rate} Stars</p>
+            <p className="product__rate">{getStars(rating.rate)}</p>
             <p className="product__count">{rating.count} reviews</p>
           </div>
           <img src={image} alt={title} className="product__img" />
