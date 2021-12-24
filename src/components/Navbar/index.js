@@ -16,7 +16,7 @@ const Navbar = () => {
         type="button"
         onClick={() => setShowMenu(!showMenu)}
       >
-        menu
+        <i className="fas fa-bars fa-2x" />
       </button>
       <ul className="header__navbar-desk">
         <Link to="/">
