@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import Timer from '../Timer';
 import './styles.scss';
 

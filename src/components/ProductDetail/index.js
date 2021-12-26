@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
+import DetailSkeleton from '../DetailSkeleton';
 import getStars from '../../utils/getStars';
 import useFetchProductById from '../../utils/hooks/useFetchProductById';
-import DetailSkeleton from '../DetailSkeleton';
 import './styles.scss';
 
 const ProductDetail = () => {
