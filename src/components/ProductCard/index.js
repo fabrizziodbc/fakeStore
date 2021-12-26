@@ -19,7 +19,14 @@ const ProductCard = ({ title, img, id, dateNow }) => {
               `/detalle/${id}`
             }
           >
-            <button type="button" className="productCard__button">
+            <button
+              type="button"
+              className={`productCard__button ${
+                timeLimit.find((e) => e.id === id).limit - dateNow >= 0
+                  ? ''
+                  : 'productCard__button-disabled'
+              }`}
+            >
               Go to detail
             </button>
           </Link>

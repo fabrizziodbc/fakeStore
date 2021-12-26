@@ -9,6 +9,7 @@
   &__img {
     width: 90px;
     height: 120px;
+    object-fit: contain;
   }
   &__title {
     font-weight: bold;
@@ -26,6 +27,13 @@
     border-radius: 5px;
     width: 92px;
     height: 24px;
+    cursor: pointer;
+  }
+  &__button-disabled{
+    color: rgb(209, 209, 209);
+    background-color: #60676e;
+    cursor: default;
+    border: none;
   }
 }
 @media (min-width: 768px) {
