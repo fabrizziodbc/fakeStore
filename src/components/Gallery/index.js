@@ -1,9 +1,9 @@
-import useUpdateTime from '../../utils/hooks/useUpdateTime';
-import useFetchProducts from '../../utils/hooks/useFetchProducts';
 import ProductCard from '../ProductCard';
+import ProductSkeleton from '../ProductSkeleton';
+import useFetchProducts from '../../utils/hooks/useFetchProducts';
+import useUpdateTime from '../../utils/hooks/useUpdateTime';
 
 import './style.scss';
-import ProductSkeleton from '../ProductSkeleton';
 
 const Gallery = () => {
   const { productList, loading } = useFetchProducts();

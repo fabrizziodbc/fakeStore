@@ -1,12 +1,13 @@
 import { Provider } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import store from './store';
-import Home from './views/Home';
-import './styles.scss';
-import Detail from './views/Detail';
-import Layaout from './components/Layout';
 import About from './views/About';
+import Detail from './views/Detail';
+import Home from './views/Home';
+import Layaout from './components/Layout';
 import NotFound from './views/NotFound';
+import store from './store';
+
+import './styles.scss';
 
 const App = () => {
   return (
